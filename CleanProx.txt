@@ -1,0 +1,111 @@
+>>>Project Thrive>>>
+
+>>>
+Data source: Open Source Data from official website of Dubai Land Department.
+https://www.dubaipulse.gov.ae/
+https://dubailand.gov.ae/
+
+DATASET INFO
+dataset contians 1,048,576 rows(header included) and 47 columns as at when downloaded in csv format.
+date range of dataset is from 1975 - 2024 and 4 outlier dates 1966, 1416, 1417 and 1422.
+
+DATA CLEANING/VALIDATION/PROCESSING - EXCEL/PowerBI
+
+for the sake of this project, all(procedure_name) are grouped into sales, mortgages and gifts. procedures such as 
+Grant
+Development Mortgage Pre-Registration
+Lease to Own Registration Pre-Registration
+Lease to Own Transfer
+Modify Development Mortgage
+Delayed Lease to Own Modify
+Delayed Sell
+Mortgage Transfer
+Lease Finance Registration
+Grant on Delayed Sell
+Lease to Own Registration
+Sell Development
+Modify Mortgage Pre-Registration
+Lease Finance Modification
+Adding Land By Sell
+Grant Pre-Registration
+Sell
+Delayed Development
+Delayed Sell Lease to Own Registration
+Sell Development - Pre Registration
+Delayed Lease to Own Registration
+Mortgage Transfer Pre-Registration
+Development Registration
+Delayed Mortgage
+Lease to Own Modify
+Modify Delayed Mortgage 
+Sell - Pre registration
+Delayed Sell Development
+Development Mortgage
+Sale On Payment Plan
+Lease Development Registration
+Mortgage Registration
+Grant Development
+Transfer Development Mortgage
+Development Registration Pre-Registration
+Lease to Own on Development Modification
+Modify Mortgage
+Mortgage Pre-Registration
+Lease to Own on Development Registration
+Lease Development Modify
+
+--summary of data cleaning/processing stage--
+STEPS:
+
+#saved another copy of the dataset as excel workbook for convenience when working in excel.
+
+#removed columns that are not required for the project analysis.
+	-deleted columns/rows
+		-14 columns(Arabic translations)
+		-22 columns (not relevant for the analysis)
+		-land transactions(84,816 rows) in property_type column were deleted as project focuses on buildings and not land
+		-5256 rows containing transactions from year 1975 till 1999 plus 4 other outlier dates(refer to DATASET INFO) 
+		in date column was deleted as analysis is focused from year 2000 onwards.
+
+****at the end of this process, there was 958,500 rows(header inclusive) and 11 columns****
+
+#renamed columns appropriately.
+	-rooms_en column renamed to capacity
+	-procedure_area was renamed to prop_area(sq/m)
+	-actual_worth was renamed to prop_value
+	-meter_sale_price was renamed to sale_price(sq/m)
+	-area_name was renamed to location_name
+	-area_id was renamed to location_id
+	-property_type was renamed to prop_type
+	-property_sub_type was renamed to prop_stype
+	-trans_group was renamed to trans_type
+	-instance_date was renamed to trans_date
+	-transaction_id was renamed to trans_id
+
+#formated values into correct datatypes
+	-trans_date column to DMY datetype
+	-sale_price(sq/m) and prop_value columns to currency AED
+	-prop_area(sq/m), location_id, column to number
+
+#check for duplicate enteries.
+	-no duplicate transactions were found in the dataset.
+ 
+#blank columns. 
+	-164,076 blanks in rooms(capacity) was replaced with NA
+	-149,407 blanks in property_stype was replaced with NA
+
+#no numeric outliers found
+
+
+PS--('MASTER' is data as at when downloaded, and 'PRODATA' is data after cleaning.)
+
+<<<
+
+
+
+	
+
+
+
+
+
+
